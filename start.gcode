@@ -83,14 +83,14 @@ G92 E0
 G1 E-0.5 F300
 
 G1 X70 F9000
-G1 X76 F15000
-G1 X65 F15000
-G1 X76 F15000
-G1 X65 F15000; shake to put down garbage
+G1 X76 F9000
+G1 X65 F9000
+G1 X76 F9000
+G1 X65 F9000; shake to put down garbage
 G1 X80 F6000
-G1 X95 F15000
-G1 X80 F15000
-G1 X165 F15000; wipe and shake
+G1 X95 F9000
+G1 X80 F9000
+G1 X165 F9000; wipe and shake
 M400
 M106 P1 S0
 ;===== prepare print temperature and material end =====
@@ -99,13 +99,13 @@ M106 P1 S0
 ;===== wipe nozzle ===============================
 M1002 gcode_claim_action : 14
 M975 S1
-M106 S255
-G1 X65 Y230 F18000
+M106 S205
+G1 X65 Y230 F9000
 G1 Y264 F6000
 M109 S{nozzle_temperature_initial_layer[initial_extruder]-20}
-G1 X100 F18000 ; first wipe mouth
+G1 X100 F9000 ; first wipe mouth
 
-G0 X135 Y253 F20000  ; move to exposed steel surface edge
+G0 X135 Y253 F9000  ; move to exposed steel surface edge
 G28 Z P0 T300; home z with low precision,permit 300deg temperature
 G29.2 S0 ; turn off ABL
 G0 Z5 F20000
@@ -114,17 +114,17 @@ G1 X60 Y265
 G92 E0
 G1 E-0.5 F300 ; retrack more
 G1 X100 F5000; second wipe mouth
-G1 X70 F15000
+G1 X70 F9000
 G1 X100 F5000
-G1 X70 F15000
+G1 X70 F9000
 G1 X100 F5000
-G1 X70 F15000
+G1 X70 F9000
 G1 X100 F5000
-G1 X70 F15000
+G1 X70 F9000
 G1 X90 F5000
 G0 X128 Y261 Z-1.5 F20000  ; move to exposed steel surface and stop the nozzle
 M104 S140 ; set temp down to heatbed acceptable
-M106 S255 ; turn on fan (G28 has turn off fan)
+M106 S205 ; turn on fan (G28 has turn off fan)
 
 M221 S; push soft endstop status
 M221 Z0 ;turn off Z axis endstop
