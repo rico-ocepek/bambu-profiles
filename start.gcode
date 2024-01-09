@@ -32,9 +32,9 @@ M190 S[bed_temperature_initial_layer_single] ;wait for bed temp
 ;=============turn on fans to prevent PLA jamming=================
 {if filament_type[initial_extruder]=="PLA"}
     {if (bed_temperature[initial_extruder] >45)||(bed_temperature_initial_layer[initial_extruder] >45)}
-    M106 P3 S180
+    M106 P3 S150
     {elsif (bed_temperature[initial_extruder] >50)||(bed_temperature_initial_layer[initial_extruder] >50)}
-    M106 P3 S255
+    M106 P3 S220
     {endif};Prevent PLA from jamming
 {endif}
 M106 P2 S100 ; turn on big fan ,to cool down toolhead
@@ -214,9 +214,9 @@ M975 S1 ; turn on vibration supression
 ;=============turn on fans to prevent PLA jamming=================
 {if filament_type[initial_extruder]=="PLA"}
     {if (bed_temperature[initial_extruder] >45)||(bed_temperature_initial_layer[initial_extruder] >45)}
-    M106 P3 S180
+    M106 P3 S150
     {elsif (bed_temperature[initial_extruder] >50)||(bed_temperature_initial_layer[initial_extruder] >50)}
-    M106 P3 S255
+    M106 P3 S220
     {endif};Prevent PLA from jamming
 {endif}
 M106 P2 S100 ; turn on big fan ,to cool down toolhead
