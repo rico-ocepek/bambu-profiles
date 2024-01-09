@@ -75,7 +75,7 @@ M104 S[nozzle_temperature_initial_layer]
 G92 E0
 G1 E50 F200
 M400
-M106 P1 S255
+M106 P1 S205
 G92 E0
 G1 E5 F300
 M109 S{nozzle_temperature_initial_layer[initial_extruder]-20} ; drop nozzle temp, make filament shink a bit
