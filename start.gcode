@@ -46,18 +46,18 @@ G0 Z10 F1200
 G90
 G28 X
 M975 S1 ; turn on
-G1 X60 F12000
+G1 X60 F9000
 G1 Y245
 G1 Y265 F3000
 M620 M
 M620 S[initial_extruder]A   ; switch material if AMS exist
     M109 S[nozzle_temperature_initial_layer]
-    G1 X120 F12000
+    G1 X120 F9000
 
-    G1 X20 Y50 F12000
+    G1 X20 Y50 F9000
     G1 Y-3
     T[initial_extruder]
-    G1 X54 F12000
+    G1 X54 F9000
     G1 Y265
     M400
 M621 S[initial_extruder]A
@@ -229,7 +229,7 @@ M975 S1
 G90
 M83
 T1000
-G1 X18.0 Y1.0 Z0.8 F18000;Move to start position
+G1 X18.0 Y1.0 Z0.8 F9000;Move to start position
 M109 S{nozzle_temperature_initial_layer[initial_extruder]}
 G1 Z0.2
 G0 E2 F300
